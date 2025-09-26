@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Azad - Web UI Designer & Developer</title>
+    <meta name="description" content="Professional portfolio of Md Azad, a passionate Web UI Designer and Developer specializing in web and mobile platforms. View my projects, skills, and get in touch!">
+    <meta name="keywords" content="web developer, UI designer, mobile developer, portfolio, Md Azad, frontend developer, React, JavaScript, HTML, CSS, responsive design">
+    <meta name="author" content="Md Azad">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mdazad.portfolio.com/">
+    <meta property="og:title" content="Md Azad - Web UI Designer & Developer">
+    <meta property="og:description" content="Professional portfolio of Md Azad, a passionate Web UI Designer and Developer specializing in web and mobile platforms.">
+    <meta property="og:image" content="https://mdazad.portfolio.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mdazad.portfolio.com/">
+    <meta property="twitter:title" content="Md Azad - Web UI Designer & Developer">
+    <meta property="twitter:description" content="Professional portfolio of Md Azad, a passionate Web UI Designer and Developer specializing in web and mobile platforms.">
+    <meta property="twitter:image" content="https://mdazad.portfolio.com/og-image.jpg">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Md Azad Portfolio">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Md Azad",
+        "jobTitle": "Web UI Designer & Developer",
+        "description": "Passionate Web UI Designer and Developer specializing in web and mobile platforms",
+        "email": "azad79900@gmail.com",
+        "telephone": "+91 6299256892",
+        "url": "https://mdazad.portfolio.com",
+        "sameAs": [
+            "https://github.com/mdazad",
+            "https://linkedin.com/in/mdazad",
+            "https://twitter.com/mdazad"
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "UI Design",
+            "Mobile Development",
+            "React",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Md Azad - Home">Md Azad</a>
+            </div>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#home" class="nav-link" role="menuitem" aria-current="page">Home</a>
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                <a href="#resume" class="nav-link" role="menuitem">Resume</a>
+                <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+                <a href="#testimonials" class="nav-link" role="menuitem">Testimonials</a>
+                <a href="#blog" class="nav-link" role="menuitem">Blog</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Md Azad</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Web UI Designer & Developer</h2>
+                    <p class="hero-description">
+                        A passionate Web UI Designer and Developer specializing in creating beautiful, 
+                        functional web and mobile applications. I love turning complex problems into 
+                        simple, elegant solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <a href="https://drive.google.com/thumbnail?id=1gd96Hia3x-5wHjozSdtR0rEgDR0vxOpr&sz=w1000"></a>
+                        <img class="profile-photo" src="https://drive.google.com/thumbnail?id=1gd96Hia3x-5wHjozSdtR0rEgDR0vxOpr&sz=w1000" alt="Profile photo of Md Azad" loading="eager" decoding="async" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fas fa-user&quot;></i>';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        As a creative and detail-oriented Web UI Designer and Developer, I’m passionate about creating digital experiences that truly stand out. My work bridges the gap between eye-catching design and smooth functionality, bringing ideas to life through user-focused interfaces and reliable code. Exploring new technologies and design trends keeps me curious, and collaborating with others helps me deliver results that really matter. Whether I’m designing a striking portfolio or building a complex web platform, my goal is simple: to create digital solutions that connect, inspire, and make everyday life a bit easier.
+                    </p>
+                    <p>
+                        My journey in web development started with a curiosity about how websites work, 
+                        and it has evolved into a career focused on creating user-centered solutions that 
+                        make a real impact.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>23+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>80%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A modern e-commerce solution with React and Node.js, featuring real-time inventory management and secure payment processing.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Mobile Banking App</h3>
+                        <p>A secure mobile banking application with biometric authentication and real-time transaction monitoring.</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Analytics Dashboard</h3>
+                        <p>An interactive dashboard for data visualization with real-time updates and customizable widgets.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>D3.js</span>
+                            <span>Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Blog CMS</h3>
+                        <p>A content management system for bloggers with markdown support and SEO optimization.</p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Strapi</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Food Delivery App</h3>
+                        <p>A food delivery application with real-time tracking and multiple payment options.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Learning Platform</h3>
+                        <p>An online learning platform with video streaming and interactive quizzes.</p>
+                        <div class="project-tech">
+                            <span>Angular</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-content">
+                <div class="resume-download">
+                    <a href="https://drive.google.com/file/d/1gaTLOUppgQJU1iVNyWNBYeLN2sPMDy53/view?usp=drive_link" class="btn btn-primary" id="download-resume" data-resume-url="https://drive.google.com/uc?export=download&id=1gaTLOUppgQJU1iVNyWNBYeLN2sPMDy53">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+                
+                <div class="resume-sections">
+                    <div class="resume-section">
+                        <h3>Education</h3>
+                        <div class="resume-item">
+                            <h4>Computer Science and Engineering</h4>
+                            <p class="institution">Government Polytechnic Chapra</p>
+                            <p class="duration">2024 - 2026</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Bachelor of Arts in Hindi</h4>
+                            <p class="institution">Jai Prakash University Chapra</p>
+                            <p class="duration">2022 - 2025</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Intermediate</h4>
+                            <p class="institution">Government Inter College Amnour Saran</p>
+                            <p class="duration">2018 - 2020</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Matriculation</h4>
+                            <p class="institution">High School Amnour Saran</p>
+                            <p class="duration">2017 - 2018</p>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h3>Courses</h3>
+                        <div class="resume-item">
+                            <h4>Advance Diploma in Computer Application</h4>
+                            <p class="institution">P. C. Systems</p>
+                            <p class="duration">2020 - 2021</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Kushal Yuva Program (KYP)</h4>
+                            <p class="institution">KYP Center Amnour Saran</p>
+                            <p class="duration">Feb 2019 - May2019</p>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h3>Work Experience</h3>
+                        <div class="resume-item">
+                            <h4>Junior Web Developer</h4>
+                            <p class="company">Tech Company</p>
+                            <p class="duration">2025 - Present</p>
+                            <ul>
+                                <li>Led development of 15+ web applications</li>
+                                <li>Mentored junior developers</li>
+                                <li>Improved application performance by 40%</li>
+                            </ul>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Frontend Developer</h4>
+                            <p class="company">Digital Agency</p>
+                            <p class="duration">2024 - 2025</p>
+                            <ul>
+                                <li>Developed responsive web applications</li>
+                                <li>Collaborated with design team</li>
+                                <li>Implemented modern UI/UX patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Certifications</h3>
+                        <div class="resume-item">
+                            <h4>Google UX Design Certificate</h4>
+                            <p class="institution">Google</p>
+                            <p class="duration">2023</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>AWS Certified Developer</h4>
+                            <p class="institution">Amazon Web Services</p>
+                            <p class="duration">2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CSS3</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Vue.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MongoDB</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PostgreSQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Design & Tools</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Figma</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Adobe XD</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>“Mujhe website ka design bahut pasand aaya, clean aur modern hai. Navigation bhi bahut smooth hai, jo user experience ko behtar banata hai."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Mr. Vivek Kumar</h4>
+                            <p>My Friend</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Working with Azad was a pleasure. He delivered our project ahead of schedule and exceeded our expectations in terms of quality and attention to detail."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Mr. Rahul kumar mahto</h4>
+                            <p>My friend</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Azad's expertise in both frontend and backend development made him the perfect choice for our full-stack project. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Mr. Vishwakarma</h4>
+                            <p>My friend</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The mobile app Azad developed for us has been a game-changer. His understanding of user experience and technical implementation is outstanding."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>Founder, MobileFirst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Dec 15, 2024</span>
+                            <span class="blog-category">Development</span>
+                        </div>
+                        <h3 class="blog-title">The Future of Web Development</h3>
+                        <p class="blog-excerpt">Exploring the latest trends and technologies shaping the future of web development...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Dec 10, 2024</span>
+                            <span class="blog-category">Design</span>
+                        </div>
+                        <h3 class="blog-title">UI/UX Design Principles</h3>
+                        <p class="blog-excerpt">Essential design principles every developer should know to create better user experiences...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Dec 5, 2024</span>
+                            <span class="blog-category">Mobile</span>
+                        </div>
+                        <h3 class="blog-title">Mobile-First Development</h3>
+                        <p class="blog-excerpt">Why mobile-first approach is crucial for modern web development and how to implement it...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div> 
+        </div>
+        
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+916299256892">+91 6299256892</a>
+                                    <br><a href="https://wa.me/916299256892" target="_blank">Chat on WhatsApp</a>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:aiechnonova@gmail.com">aiechnonova@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p><a href="https://www.google.com/maps?q=Saran,Bihar,India" target="_blank">Saran, Bihar, India</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Mdazad4153" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/md-azad-ansari-a01bab2b5" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/MDAzad4153" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/md_azad_404/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/people/Muhammad-Azad/100092989903838/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form" role="form" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error">
+                        <div id="name-error" class="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error">
+                        <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true" aria-describedby="message-error"></textarea>
+                        <div id="message-error" class="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-describedby="submit-status">Send Message</button>
+                    <div id="submit-status" class="submit-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Md Azad. All rights reserved.</p>
+                <p>Designed & Developed with ❤️ by Md Azad</p>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Upar jao">⇧</button>
+
+    <!-- Supabase Configuration -->
+    <script src="supabase-config.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
