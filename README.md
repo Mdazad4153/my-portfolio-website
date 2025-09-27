@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website for Md Azad, showcasing skills as a Web UI Designer and Developer.
 
+🌐 **Live Website**: [https://mdazad4153.github.io/my-portfolio-website/](https://mdazad4153.github.io/my-portfolio-website/)
+
 ## 🚀 Features
 
 - **Responsive Design**: Fully responsive across all devices (mobile, tablet, desktop)
@@ -84,7 +86,8 @@ portfolioo/
    - Replace `YOUR_SUPABASE_ANON_KEY` with your anon key
 
 4. **Open the website**:
-   - Simply open `index.html` in your web browser
+   - **Live Version**: Visit [https://mdazad4153.github.io/my-portfolio-website/](https://mdazad4153.github.io/my-portfolio-website/)
+   - **Local Development**: Simply open `index.html` in your web browser
    - Or use a local server for better development experience
 
 ### Local Development Server
@@ -102,7 +105,7 @@ npx http-server
 php -S localhost:8000
 ```
 
-Then visit `http://localhost:8000`
+Then visit `https://mdazad4153.github.io/my-portfolio-website/`
 
 ## 🔧 Customization
 
@@ -169,7 +172,8 @@ This project is created for Md Azad's personal portfolio. Feel free to use as in
 ## 📞 Contact
 
 **Md Azad**
-- 📧 Email: azad79900@gmail.com
+- 🌐 **Portfolio**: [https://mdazad4153.github.io/my-portfolio-website/](https://mdazad4153.github.io/my-portfolio-website/)
+- 📧 Email: aiechnonova@gmail.com
 - 📱 Phone: +91 6299256892
 - 🌐 Web UI Designer & Developer
 
