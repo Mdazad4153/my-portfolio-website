@@ -175,23 +175,22 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
+// Scroll to Top Button Functionality
 // Button ko select karo
-let mybutton = document.getElementById("scrollToTopBtn");
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Jab user 20px se zyada scroll kare, tab button dikhao
-window.onscroll = function() {
-  scrollFunction();
-};
+if (scrollToTopBtn) {
+  // Jab user 20px se zyada scroll kare, tab button dikhao
+  window.addEventListener('scroll', function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollToTopBtn.style.display = "flex";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+  // Jab user button pe click kare, page ko smooth scroll karke top par le jao
+  scrollToTopBtn.addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
 }
-
-// Jab user button pe click kare, page ko smooth scroll karke top par le jao
-mybutton.addEventListener("click", function() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-});

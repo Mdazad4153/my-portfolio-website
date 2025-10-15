@@ -42,6 +42,14 @@ portfolioo/
 
 ## 🎨 Design Features
 
+### Images
+- **Project Images**: High-quality images from Unsplash matching each project theme
+- **Blog Images**: Relevant images for blog post categories
+- **Lazy Loading**: Images load efficiently with `loading="lazy"` attribute
+- **Fallback**: Icon placeholders if images fail to load
+- **Hover Effects**: Smooth zoom effects on project and blog images
+- **Overlay**: Gradient overlays on hover for better visual appeal
+
 ### Color Scheme
 - **Light Mode**: Clean whites and grays with blue accents
 - **Dark Mode**: Dark backgrounds with light text and purple accents
@@ -115,7 +123,7 @@ Update the following in `index.html`:
 - Contact information (phone, email)
 - Social media links
 - Project details and descriptions
-- Resume information
+- Resume information and Google Drive link (see [RESUME_LINK.md](RESUME_LINK.md))
 
 ### Styling
 Modify `styles.css` to customize:

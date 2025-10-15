@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTestimonials();
     initializeContactForm();
     initializeAnimations();
+    checkImagesLoading();
+    initializeCounters();
 });
 
 // Theme Management
@@ -36,19 +38,32 @@ function initializeTheme() {
     
     // Theme toggle event listener
     themeToggle.addEventListener('click', toggleTheme);
+    
+    // Log theme initialization
+    console.log(`🎨 Theme initialized: ${savedTheme} mode`);
 }
 
 function setTheme(theme) {
+    // Add transition class to body for smooth theme change
+    document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     
-    // Update theme toggle icon
+    // Update theme toggle icon with animation
     const icon = themeToggle.querySelector('i');
     if (theme === 'dark') {
         icon.className = 'fas fa-sun';
+        console.log('🌙 Dark mode activated');
     } else {
         icon.className = 'fas fa-moon';
+        console.log('☀️ Light mode activated');
     }
+    
+    // Show notification
+    setTimeout(() => {
+        showNotification(`${theme === 'dark' ? 'Dark' : 'Light'} mode activated!`, 'info');
+    }, 100);
 }
 
 function toggleTheme() {
@@ -161,9 +176,12 @@ function initializeSkillBars() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateSkillBars();
+                animateSkillCategories();
                 observer.unobserve(entry.target);
             }
         });
+    }, {
+        threshold: 0.2
     });
     
     const skillsSection = document.querySelector('.skills');
@@ -177,7 +195,28 @@ function animateSkillBars() {
         setTimeout(() => {
             const width = bar.getAttribute('data-width');
             bar.style.width = width;
-        }, index * 200);
+            
+            // Add pulse effect on completion
+            setTimeout(() => {
+                bar.style.animation = 'pulse 0.5s ease-in-out';
+            }, 2000);
+        }, index * 100);
+    });
+}
+
+function animateSkillCategories() {
+    const categories = document.querySelectorAll('.skills-category');
+    categories.forEach((category, index) => {
+        setTimeout(() => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(30px)';
+            category.style.transition = 'all 0.6s ease-out';
+            
+            setTimeout(() => {
+                category.style.opacity = '1';
+                category.style.transform = 'translateY(0)';
+            }, 50);
+        }, index * 150);
     });
 }
 
@@ -429,73 +468,88 @@ document.head.appendChild(style);
 
 // Resume Download Handler
 document.getElementById('download-resume')?.addEventListener('click', function(e) {
-    e.preventDefault();
+    // Let the default link behavior work for viewing
+    // Show a helpful message
+    setTimeout(() => {
+        showNotification('Resume opened! You can view or download it from Google Drive.', 'success');
+    }, 500);
     
-    // Show password message first
-    showNotification('For password, please contact Md Azad.', 'info');
-    
-    const url = this.getAttribute('data-resume-url');
-    if (url && url.trim().length > 0) {
-        // Wait for notification to show, then open download
-        setTimeout(() => {
-            // Try direct download first
-            const downloadLink = document.createElement('a');
-            downloadLink.href = url;
-            downloadLink.download = 'Md_Azad_Resume.pdf';
-            downloadLink.target = '_blank';
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-            
-            // Also open in new tab as backup
-            setTimeout(() => {
-                window.open(url, '_blank', 'noopener');
-            }, 500);
-        }, 1500);
-    } else {
-        console.warn('Resume URL is not set. Add it to data-resume-url on #download-resume');
-        showNotification('Resume URL not configured. Please contact Md Azad.', 'error');
-    }
+    console.log('📄 Resume link opened: https://drive.google.com/file/d/1MR8UkXbUzMaaR33w9NieLUWrv0H_0kW-/view');
 });
 
-// Social Links Handler
+// Social Links Handler - Enhanced with tracking
 document.querySelectorAll('.social-link').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
+        // Don't prevent default - let the link open
         const platform = this.querySelector('i').className;
-        showNotification(`${platform.includes('github') ? 'GitHub' : 
-                         platform.includes('linkedin') ? 'LinkedIn' : 
-                         platform.includes('twitter') ? 'Twitter' : 
-                         platform.includes('instagram') ? 'Instagram' : 
-                         platform.includes('facebook') ? 'Facebook' : 'Social'} link will open soon!`, 'info');
+        const platformName = platform.includes('github') ? 'GitHub' : 
+                            platform.includes('linkedin') ? 'LinkedIn' : 
+                            platform.includes('twitter') ? 'Twitter/X' : 
+                            platform.includes('instagram') ? 'Instagram' : 
+                            platform.includes('facebook') ? 'Facebook' : 'Social';
+        
+        console.log(`🔗 Opening ${platformName} profile...`);
+        
+        // Show a quick notification without blocking the link
+        setTimeout(() => {
+            showNotification(`Opening ${platformName}...`, 'info');
+        }, 100);
     });
 });
 
-// Project Links Handler
+// Project Links Handler - Enhanced
 document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
-        showNotification('Project link will open soon!', 'info');
+        const isGitHub = this.querySelector('i').className.includes('github');
+        const isExternal = this.querySelector('i').className.includes('external');
+        
+        console.log(`🚀 Project link clicked: ${isGitHub ? 'GitHub' : 'Live Demo'}`);
+        
+        // Only show notification, don't prevent default if there's a valid href
+        if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+            showNotification('Project link coming soon!', 'info');
+        }
     });
 });
 
-// Blog Links Handler
+// Blog Links Handler - Enhanced
 document.querySelectorAll('.blog-link').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
-        showNotification('Blog post will open soon!', 'info');
+        console.log('📰 Blog link clicked');
+        
+        // Only prevent if href is '#'
+        if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+            showNotification('Blog post coming soon!', 'info');
+        }
     });
 });
 
-// Console welcome message
-console.log(`
-🚀 Portfolio Website by Md Azad
-📧 Email: azad79900@gmail.com
-📱 Phone: +91 6299256892
-🌐 Web UI Designer & Developer
-
-Thank you for visiting my portfolio!
-`);
+// Copy button functionality for code examples
+document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const codeBlock = this.closest('.code-example').querySelector('code');
+        const text = codeBlock.textContent;
+        
+        navigator.clipboard.writeText(text).then(() => {
+            // Show feedback
+            const originalIcon = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            this.style.color = '#10b981';
+            
+            setTimeout(() => {
+                this.innerHTML = originalIcon;
+                this.style.color = '';
+            }, 2000);
+            
+            console.log('Code copied to clipboard');
+        }).catch(err => {
+            console.error('Failed to copy code: ', err);
+            showNotification('Failed to copy code', 'error');
+        });
+    });
+});
 
 // Export functions for potential module use
 if (typeof module !== 'undefined' && module.exports) {
@@ -507,3 +561,87 @@ if (typeof module !== 'undefined' && module.exports) {
         throttle
     };
 }
+
+// Counter Animation
+function initializeCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(counter) {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const updateCounter = () => {
+        current += step;
+        if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target;
+        }
+    };
+    
+    updateCounter();
+}
+
+// Image Loading Check
+function checkImagesLoading() {
+    const projectImages = document.querySelectorAll('.project-image img');
+    const blogImages = document.querySelectorAll('.blog-image img');
+    
+    let loadedCount = 0;
+    let totalImages = projectImages.length + blogImages.length;
+    
+    console.log(`🖼️ Loading ${totalImages} images...`);
+    
+    const checkImageLoad = (img, type, index) => {
+        img.addEventListener('load', () => {
+            loadedCount++;
+            console.log(`✅ ${type} image ${index + 1} loaded successfully`);
+            if (loadedCount === totalImages) {
+                console.log(`🎉 All ${totalImages} images loaded successfully!`);
+                showNotification('All images loaded successfully!', 'success');
+            }
+        });
+        
+        img.addEventListener('error', () => {
+            console.warn(`⚠️ ${type} image ${index + 1} failed to load, using fallback`);
+        });
+    };
+    
+    projectImages.forEach((img, index) => checkImageLoad(img, 'Project', index));
+    blogImages.forEach((img, index) => checkImageLoad(img, 'Blog', index));
+}
+
+// Console welcome message
+console.log(`
+%c🚀 Portfolio Website by Md Azad
+%c📧 Email: azad79900@gmail.com
+%c📱 Phone: +91 6299256892
+%c🌐 Web UI Designer & Developer
+
+%cThank you for visiting my portfolio!
+%cToggle Dark/Light mode using the moon/sun icon in the navigation bar.
+`,
+  'color: #6366f1; font-size: 16px; font-weight: bold;',
+  'color: #10b981; font-size: 14px;',
+  'color: #10b981; font-size: 14px;',
+  'color: #f59e0b; font-size: 14px; font-weight: bold;',
+  'color: #6366f1; font-size: 14px; font-style: italic;',
+  'color: #8b5cf6; font-size: 12px;'
+);
